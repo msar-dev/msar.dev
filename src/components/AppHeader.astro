@@ -1,5 +1,8 @@
 ---
 import Container from "./Container.astro";
+import Logo from "./Logo.astro";
+
+import { info } from "../data";
 ---
 
 <header>
@@ -18,37 +21,7 @@ import Container from "./Container.astro";
                 <div
                     class="relative z-20 w-full flex justify-between lg:w-max md:px-0"
                 >
-                    <a
-                        href="#home"
-                        aria-label="logo"
-                        class="flex space-x-2 items-center"
-                    >
-                        <div aria-hidden="true" class="flex space-x-1">
-                            <div
-                                class="h-4 w-4 rounded-full bg-gray-900 dark:bg-white"
-                            >
-                            </div>
-                            <div class="h-6 w-2 bg-primary"></div>
-                        </div>
-                        <span
-                            class="text-2xl font-bold text-gray-900 dark:text-white"
-                            >MSAR</span
-                        >
-                    </a>
-
-                    <!-- Theme toggle -->
-                    <div class="flex items-center space-x-2">
-                        <button
-                            aria-label="Toggle Dark Mode"
-                            type="button"
-                            class="w-6 h-6 ml-4 filter brightness-0 dark:brightness-100"
-                            onclick="
-                            toggleTheme()
-                            "
-                            id="theme-toggle"
-                        >
-                        </button>
-                    </div>
+                    <Logo className="flex space-x-2 items-center" />
 
                     <div class="relative flex items-center lg:hidden max-h-10">
                         <label
@@ -79,7 +52,7 @@ import Container from "./Container.astro";
                 >
                 </div>
                 <div
-                    class="flex-col z-20 flex-wrap gap-6 p-8 rounded-3xl border border-gray-100 bg-white shadow-2xl shadow-gray-600/10 justify-end w-full invisible opacity-0 translate-y-1 absolute top-full left-0 transition-all duration-300 scale-95 origin-top
+                    class="flex-col z-20 flex-wrap gap-6 p-8 rounded-3xl border border-gray-100 bg-white peer-checked:dark:bg-slate-800 shadow-2xl shadow-gray-600/10 justify-end w-full invisible opacity-0 translate-y-1 absolute top-full left-0 transition-all duration-300 scale-95 origin-top
                             lg:relative lg:scale-100 lg:peer-checked:translate-y-0 lg:translate-y-0 lg:flex lg:flex-row lg:items-center lg:gap-0 lg:p-0 lg:bg-transparent lg:w-7/12 lg:visible lg:opacity-100 lg:border-none
                             peer-checked:scale-100 peer-checked:opacity-100 peer-checked:visible lg:shadow-none
                             dark:shadow-none"
@@ -109,9 +82,10 @@ import Container from "./Container.astro";
                         </ul>
                     </div>
 
-                    <div class="mt-12 lg:mt-0">
+                    <div class="mt-12 lg:mt-0 flex items-center">
                         <a
-                            href="#"
+                            target="_blank"
+                            href={info.appointmentLink}
                             class="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
                         >
                             <span
@@ -119,6 +93,18 @@ import Container from "./Container.astro";
                                 >Get Started</span
                             >
                         </a>
+                        <div class="ml-4">
+                            <button
+                                aria-label="Toggle Dark Mode"
+                                type="button"
+                                class="w-6 h-9 leading-none text-2xl transform rotate-[-145deg] text-slate-900 dark:text-white"
+                                onclick="
+                                toggleTheme()
+                                "
+                                id="theme-toggle"
+                            >
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

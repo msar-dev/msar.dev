@@ -69,7 +69,7 @@ const toggleTheme = () => {
     }
     window.localStorage.setItem("theme", newTheme);
     const button = document.getElementById("theme-toggle");
-    button.innerHTML = newTheme === "dark" ? "🌞" : "🌙";
+    button.innerHTML = newTheme === "dark" ? "☼" : "☾";
 
     console.log("new theme", newTheme);
 };
@@ -83,6 +83,6 @@ const toggleTheme = () => {
     }
     window.localStorage.setItem("theme", theme);
     const button = document.getElementById("theme-toggle");
-    button.innerHTML = theme === "dark" ? "🌞" : "🌙";
+    button.innerHTML = theme === "dark" ? "☼" : "☾";
 })();
 </script>

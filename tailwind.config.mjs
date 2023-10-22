@@ -1,3 +1,5 @@
+import colors from "tailwindcss/colors";
+
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: "class",
@@ -5,9 +7,9 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: "#9333EA",
-                secondary: "#ff7e33",
-                info: "#0C63E7",
+                primary: colors.teal[500],
+                secondary: colors.teal[900],
+                info: colors.blue[500],
             },
         },
     },
