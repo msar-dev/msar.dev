@@ -60,7 +60,6 @@ const getTheme = () => {
 
 const toggleTheme = () => {
     const theme = getTheme();
-    console.log("toggle theme");
     const newTheme = theme === "dark" ? "light" : "dark";
     if (newTheme === "light") {
         document.documentElement.classList.remove("dark");
@@ -68,10 +67,6 @@ const toggleTheme = () => {
         document.documentElement.classList.add("dark");
     }
     window.localStorage.setItem("theme", newTheme);
-    const button = document.getElementById("theme-toggle");
-    button.innerHTML = newTheme === "dark" ? "☼" : "☾";
-
-    console.log("new theme", newTheme);
 };
 
 (function () {
@@ -82,7 +77,5 @@ const toggleTheme = () => {
         document.documentElement.classList.add("dark");
     }
     window.localStorage.setItem("theme", theme);
-    const button = document.getElementById("theme-toggle");
-    button.innerHTML = theme === "dark" ? "☼" : "☾";
 })();
 </script>

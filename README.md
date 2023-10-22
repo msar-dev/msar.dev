@@ -1,5 +1,7 @@
 # MSAR Dev Site
 
+![Screenshot](./public/screenshot.png)
+
 ## Links
 
 -   https://techwards.co/
