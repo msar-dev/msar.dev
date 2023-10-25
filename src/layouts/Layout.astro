@@ -7,6 +7,48 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+const metaTitle = `${title} | Morse Software and Research`;
+const metaDescription =
+    "Morse Software and Research offers cutting-edge custom software solutions, user-friendly design the latest technologies for web, mobile, and more.";
+const metaImage = "https://msar.dev/screenshot.png";
+const keywords = [
+    "Morse",
+    "Morse Software",
+    "Research",
+    "Software Development",
+    "Web Application",
+    "Custom Software",
+    "Software",
+    "Custom Software Development",
+    "Web Application Development",
+    "Mobile App Solutions",
+    "Innovative Software",
+    "User-Centric Design",
+    "Technology Solutions",
+    "Code Excellence",
+    "Business Software",
+    "Software Company",
+    "Website",
+    "Web Design",
+    "Web Development",
+    "UI/UX",
+    "Web",
+    "Mobile",
+    "App",
+    "Design",
+    "Development",
+    "Consulting",
+    "Laravel",
+    "React",
+    "PHP",
+    "JavaScript",
+    "TypeScript",
+    "Node.js",
+    "Next.js",
+    "Tailwind CSS",
+    "Astro",
+];
 ---
 
 <!doctype html>
@@ -15,18 +57,45 @@ const { title } = Astro.props;
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<link rel="sitemap" href="/sitemap-index.xml" />
-        <meta name="generator" content={Astro.generator} />
-        <meta
-            name="description"
-            content="Explore cutting-edge solutions with our premier software development company. From custom applications to innovative web and mobile solutions, we deliver tailored software to propel your business forward. Discover excellence in code, design, and functionality with MSAR dev."
-        />
-        <title>{title} | Morse Software and Research (msar.dev)</title>
+        <link rel="sitemap" href="/sitemap-index.xml" />
+
+        <!-- Primary Meta Tags -->
+        <title>{title} | Morse Software and Research</title>
+        <meta name="title" content={metaTitle} />
+        <meta name="description" content={metaDescription} />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://msar.dev/" />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:image" content={metaImage} />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://msar.dev/" />
+        <meta property="twitter:title" content={metaTitle} />
+        <meta property="twitter:description" content={metaDescription} />
+        <meta property="twitter:image" content={metaImage} />
+
+        <!-- Others -->
+        <meta name="keywords" content={keywords.join(", ")} />
+        <meta name="author" content="Morse Software (msar.dev)" />
 
         <link
             href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap"
             rel="stylesheet"
         />
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "WebSite",
+                "@id": "#website",
+                "url": "https://msar.dev/",
+                "name": "msar.dev",
+                "alternateName": "Morse Software and Research"
+            }
+        </script>
     </head>
     <body class="bg-white dark:bg-gray-900">
         <AppHeader />
